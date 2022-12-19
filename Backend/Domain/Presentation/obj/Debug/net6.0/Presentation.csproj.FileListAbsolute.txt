@@ -1,0 +1,12 @@
+D:\CHS_Project\Backend\Domain\Presentation\bin\Debug\net6.0\Presentation.deps.json
+D:\CHS_Project\Backend\Domain\Presentation\bin\Debug\net6.0\Presentation.dll
+D:\CHS_Project\Backend\Domain\Presentation\bin\Debug\net6.0\Presentation.pdb
+D:\CHS_Project\Backend\Domain\Presentation\obj\Debug\net6.0\Presentation.csproj.AssemblyReference.cache
+D:\CHS_Project\Backend\Domain\Presentation\obj\Debug\net6.0\Presentation.GeneratedMSBuildEditorConfig.editorconfig
+D:\CHS_Project\Backend\Domain\Presentation\obj\Debug\net6.0\Presentation.AssemblyInfoInputs.cache
+D:\CHS_Project\Backend\Domain\Presentation\obj\Debug\net6.0\Presentation.AssemblyInfo.cs
+D:\CHS_Project\Backend\Domain\Presentation\obj\Debug\net6.0\Presentation.csproj.CoreCompileInputs.cache
+D:\CHS_Project\Backend\Domain\Presentation\obj\Debug\net6.0\Presentation.dll
+D:\CHS_Project\Backend\Domain\Presentation\obj\Debug\net6.0\refint\Presentation.dll
+D:\CHS_Project\Backend\Domain\Presentation\obj\Debug\net6.0\Presentation.pdb
+D:\CHS_Project\Backend\Domain\Presentation\obj\Debug\net6.0\ref\Presentation.dll
