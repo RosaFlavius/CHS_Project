@@ -33,7 +33,7 @@ namespace Application.CommandHandlers
             user.Country = request.Country;
             user.City = request.City;
             user.Address = request.Address;
-            user.Admin = user.Admin;
+            user.Admin = request.Admin;
 
             User result = _userRepo.UpdateUser(user);
             await _userRepo.SaveChangesAsync();

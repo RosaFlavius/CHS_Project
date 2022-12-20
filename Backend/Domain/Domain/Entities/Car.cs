@@ -11,9 +11,15 @@ namespace Domain.Entities
     {
         public Car(string make, string model, int year, int mileage, FuelType fuel, float price, string image)
         {
+            Make = make;
+            Model = model;
+            Year = year;
+            Mileage = mileage;
             Fuel = fuel;
+            Price = price;
+            Image = image;
 
-            if (string.IsNullOrEmpty(make))
+/*            if (string.IsNullOrEmpty(make))
                 throw new ArgumentNullException("Null_make");
             if (string.IsNullOrEmpty(model))
                 throw new ArgumentNullException("Null_model");
@@ -24,7 +30,7 @@ namespace Domain.Entities
             if (string.IsNullOrEmpty(image))
                 throw new ArgumentNullException("Null_image");
             if (price <= 0)
-                throw new ArgumentOutOfRangeException("Wrong_Price_Range");
+                throw new ArgumentOutOfRangeException("Wrong_Price_Range");*/
         }
         public Guid Id { get; set; } = Guid.NewGuid();
         public string Make { get; set; }
