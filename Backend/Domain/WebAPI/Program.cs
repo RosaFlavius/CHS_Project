@@ -23,6 +23,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ICarRepository, CarRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
 
 var app = builder.Build();

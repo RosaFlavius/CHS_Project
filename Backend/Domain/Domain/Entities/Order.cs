@@ -13,5 +13,6 @@ namespace Domain.Entities
 
         }
         public Guid Id { get; set; } = Guid.NewGuid();
+        public double TotalPrice { get; set; }
     }
 }

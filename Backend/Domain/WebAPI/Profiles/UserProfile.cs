@@ -10,6 +10,8 @@ namespace WebAPI.Profiles
         {
             CreateMap<User, UserDTO>()
                 .ReverseMap();
+            CreateMap<User, NewUserDTO>()
+                .ReverseMap();
         }
     }
 }

@@ -31,7 +31,7 @@ namespace WebAPI.Controllers
             };
 
             var result = await _mediator.Send(query);
-            var dtoResult = _mapper.Map<CarDTO>(result);
+            var dtoResult = _mapper.Map<NewCarDTO>(result);
             return Ok(dtoResult);
         }
 

@@ -30,7 +30,7 @@ namespace WebAPI.Controllers
             };
 
             var result = await _mediator.Send(query);
-            var dtoResult = _mapper.Map<UserDTO>(result);
+            var dtoResult = _mapper.Map<NewUserDTO>(result);
             return Ok(dtoResult);
         }
         [HttpGet("users/{email}")]

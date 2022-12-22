@@ -10,6 +10,8 @@ namespace WebAPI.Profiles
         {
             CreateMap<Car, CarDTO>()
                 .ReverseMap();
+            CreateMap<Car, NewCarDTO>()
+                .ReverseMap();
         }
     }
 }
