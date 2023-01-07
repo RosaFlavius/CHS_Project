@@ -31,6 +31,12 @@ namespace Application.CommandHandlers.Cars
             car.Fuel = request.Fuel;
             car.Price = request.Price;
             car.Image = request.Image;
+            car.Engine = request.Engine;
+            car.AirConditions = request.AirConditions;
+            car.NrOfDoors = request.NrOfDoors;
+            car.Consumption = request.Consumption;
+            car.Availability = request.Availability;
+            car.Location = request.Location;
 
             Car result = _carRepo.UpdateCar(car);
             await _carRepo.SaveChangesAsync();

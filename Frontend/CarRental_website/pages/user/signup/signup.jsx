@@ -16,32 +16,61 @@ const styles = StyleSheet.create({
     color: Colors.white,
   },
   scrollView: {
-    marginTop: 70,
+    backgroundColor: "black",
+
+    width: "80%",
+    height: "100%",
   },
   button: {
     borderRadius: 4,
     height: 50,
   },
+  container: {
+    backgroundColor: "black",
+    alignItems: "center",
+  },
+  containerTitle: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 30,
+  },
+  containerTextInputs: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
 });
 
 export default function SignUp() {
   return (
-    <ScrollView style={styles.scrollView}>
-      <Stack spacing={2} style={{ margin: 16, width: 300 }}>
+    <View style={styles.container}>
+      <View style={styles.containerTitle}>
         <Text style={styles.titleText}>Welcome to CarRental!</Text>
         <Text style={styles.subtitleText}>
           Let's get you a ride as fast as possible!
         </Text>
-        <TextInput label="First Name" />
-        <TextInput label="Last Name" />
-        <TextInput label="Email" />
-        <TextInput label="Password" secureTextEntry />
-        <TextInput label="Confirm Password" secureTextEntry />
-        <TextInput label="Phone" />
-        <TextInput label="DateOfBirth" />
-        <TextInput label="Country" />
-        <TextInput label="City" />
-        <TextInput label="Address" />
+      </View>
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.containerTextInputs}>
+          <TextInput label="First Name" style={{ marginBottom: 5 }} />
+          <TextInput label="Last Name" style={{ marginBottom: 5 }} />
+          <TextInput label="Email" style={{ marginBottom: 5 }} />
+          <TextInput
+            label="Password"
+            secureTextEntry
+            style={{ marginBottom: 5 }}
+          />
+          <TextInput
+            label="Confirm Password"
+            secureTextEntry
+            style={{ marginBottom: 5 }}
+          />
+          <TextInput label="Phone" style={{ marginBottom: 5 }} />
+          <TextInput label="DateOfBirth" style={{ marginBottom: 5 }} />
+          <TextInput label="Country" style={{ marginBottom: 5 }} />
+          <TextInput label="City" style={{ marginBottom: 5 }} />
+          <TextInput label="Address" style={{ marginBottom: 5 }} />
+        </View>
         <Button
           style={styles.button}
           mode="contained"
@@ -50,7 +79,7 @@ export default function SignUp() {
         >
           Register
         </Button>
-      </Stack>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 }

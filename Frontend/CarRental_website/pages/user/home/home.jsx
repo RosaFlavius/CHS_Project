@@ -1,30 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CarCard from "../../../components/cardCar";
 import { StyleSheet, ScrollView, View } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import AppbarHome from "../../../components/appbarHome";
-import DialogFilters from "../../../components/dialogFilters";
-import { Provider } from "react-native-paper";
+import ROUTES from "../../../navigations/constants";
+import env from "../../../environment.json";
+import axios from "axios";
+import { useNavigation } from "@react-navigation/native";
 
 const styles = StyleSheet.create({
   view: {
     width: "100%",
+    backgroundColor: "white",
   },
 });
 
 const Home = () => {
+  const [cars, setCars] = useState([]);
+  const navigation = useNavigation();
+
+  const fetchCars = async () => {
+    await axios
+      .get(`${env.BASE_URL}` + `Car`)
+      .then((response) => {
+        setCars(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    fetchCars();
+    console.log(cars);
+  }, []);
+
   return (
-    <Provider>
-      <View style={styles.view}>
-        <View>
-          <AppbarHome />
-        </View>
-        <ScrollView>
-          <CarCard />
-          <CarCard />
-          <CarCard />
-        </ScrollView>
+    <View style={styles.view}>
+      <View>
+        <AppbarHome />
       </View>
-    </Provider>
+      <ScrollView style={{ marginBottom: 95 }}>
+        {cars?.map((item) => (
+          <TouchableOpacity
+            activeOpacity={0.9}
+            key={item.id}
+            onPress={() =>
+              navigation.navigate(ROUTES.CAR, {
+                id: `${item.id}`,
+              })
+            }
+          >
+            <CarCard key={item.id} item={item} />
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+    </View>
   );
 };
 

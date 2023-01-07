@@ -19,5 +19,11 @@ namespace Application.Commands.Cars
         public FuelType Fuel { get; set; }
         public string Image { get; set; }
         public float Price { get; set; }
+        public int Engine { get; set; }
+        public bool AirConditions { get; set; }
+        public int NrOfDoors { get; set; }
+        public ConsumptionType Consumption { get; set; }
+        public bool Availability { get; set; }
+        public string Location { get; set; }
     }
 }

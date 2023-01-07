@@ -29,7 +29,14 @@ namespace Application.CommandHandlers.Cars
                 request.Mileage,
                 request.Fuel,
                 request.Price,
-                request.Image
+                request.Image,
+                request.Engine,
+                request.AirConditions,
+                request.NrOfDoors,
+                request.Consumption,
+                request.Availability,
+                request.Location
+
                 );
 
             _carRepo.AddCar(car);

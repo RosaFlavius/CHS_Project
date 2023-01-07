@@ -31,7 +31,7 @@ namespace WebAPI.Controllers
             };
 
             var result = await _mediator.Send(query);
-            var dtoResult = _mapper.Map<NewCarDTO>(result);
+            var dtoResult = _mapper.Map<CarGetDTO>(result);
             return Ok(dtoResult);
         }
 
@@ -41,7 +41,7 @@ namespace WebAPI.Controllers
             var query = new GetAllCarsQuery();
 
             var result = await _mediator.Send(query);
-            var dtoResult = _mapper.Map<List<CarDTO>>(result);
+            var dtoResult = _mapper.Map<List<CarGetAllDTO>>(result);
             return Ok(dtoResult);
         }
 
@@ -56,7 +56,14 @@ namespace WebAPI.Controllers
                 Mileage = car.Mileage,
                 Fuel = car.Fuel,
                 Price = car.Price,
-                Image = car.Image
+                Image = car.Image,
+                Engine = car.Engine,
+                AirConditions = car.AirConditions,
+                NrOfDoors = car.NrOfDoors,
+                Consumption = car.Consumption,
+                Availability = car.Availability,
+                Location = car.Location,
+
 
             };
 
@@ -91,7 +98,13 @@ namespace WebAPI.Controllers
                 Mileage = car.Mileage,
                 Fuel = car.Fuel,
                 Price = car.Price,
-                Image = car.Image
+                Image = car.Image,
+                Engine = car.Engine,
+                AirConditions = car.AirConditions,
+                NrOfDoors = car.NrOfDoors,
+                Consumption = car.Consumption,
+                Availability = car.Availability,
+                Location = car.Location
             };
             await _mediator.Send(command);
 

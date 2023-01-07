@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Dialog, CheckBox, ListItem, Avatar } from "@rneui/themed";
 import { View, Text, StyleSheet } from "react-native";
 import { Icon } from "@rneui/themed";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const DialogFilters = () => {
   const [visible, setVisible] = useState(false);
@@ -14,15 +15,10 @@ const DialogFilters = () => {
   return (
     <View>
       <View style={styles.buttonContainer}>
-        <Icon
-          raised
-          name="filter"
-          type="font-awesome"
-          color="black"
-          onPress={toggleDialog}
-        />
+        <TouchableOpacity onPress={toggleDialog}>
+          <Icon raised name="filter" type="font-awesome" color="black" />
+        </TouchableOpacity>
       </View>
-
       <Dialog isVisible={visible} onBackdropPress={toggleDialog}>
         <Dialog.Title title="Select Preference" />
         {[
@@ -66,7 +62,6 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   buttonContainer: {
-    margin: 20,
     justifyContent: "center",
     alignItems: "center",
   },

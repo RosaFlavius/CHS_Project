@@ -1,26 +1,28 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import SignUp from "./pages/user/signup/signup";
-import Home from "./pages/user/home/home";
 import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { Provider as PaperProvider } from "react-native-paper";
-import DialogFilters from "./components/dialogFilters";
+import "react-native-gesture-handler";
+import Routes from "./navigations/routes";
+import Profile from "./pages/user/profile/profile";
+import SignUp from "./pages/user/signup/signup";
 
 export default function App() {
   return (
-    <PaperProvider>
+    <NavigationContainer>
       <View style={styles.container}>
-        <Home />
-        <StatusBar style="auto" />
+        {/* <Profile /> */}
+        {/* <Routes /> */}
+        <SignUp />
+        {/*
+          <StatusBar style="auto" /> */}
       </View>
-    </PaperProvider>
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "black",
   },
 });

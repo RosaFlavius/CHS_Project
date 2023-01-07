@@ -3,7 +3,7 @@ import { Avatar, Button, Card, Text } from "react-native-paper";
 import { StyleSheet, View } from "react-native";
 
 const styles = StyleSheet.create({
-  card: { borderRadius: 40, padding: 5, margin: 5 },
+  card: { borderRadius: 40, padding: 5, margin: 5, backgroundColor: "white" },
   cardTitle: {
     marginTop: 30,
   },
@@ -14,25 +14,26 @@ const styles = StyleSheet.create({
   },
   cardCover: {
     marinBottom: 50,
+    backgroundColor: "white",
   },
 });
 
-const RightContent = () => (
-  <View>
-    <Text style={styles.price}>$350</Text>
-    <Text style={{ color: "grey", marginLeft: 25 }}>/month</Text>
-  </View>
-);
+const CarCard = ({ item }) => {
+  const RightContent = () => (
+    <View>
+      <Text style={styles.price}>${item.price}</Text>
+      <Text style={{ color: "grey", marginLeft: 25 }}>/day</Text>
+    </View>
+  );
 
-const CarCard = () => {
   return (
-    <Card style={styles.card}>
+    <Card style={styles.card} elevation={2}>
       <Card.Title
         style={styles.cardTitle}
-        title="Toyota"
+        title={item.make}
         titleStyle={{ color: "#212121", fontWeight: "300" }}
         titleVariant="displayMedium"
-        subtitle="Yaris iA"
+        subtitle={item.model}
         subtitleVariant="bodyLarge"
         subtitleStyle={{ color: "grey" }}
         right={RightContent}
@@ -46,14 +47,14 @@ const CarCard = () => {
           justifyContent: "space-between",
         }}
       >
-        <Text>Engine</Text>
-        <Text style={{ marginRight: 32 }}>4-Cyl 1.5 Liter</Text>
+        <Text>{item.location}</Text>
       </Card.Content>
       <Card.Cover
         style={styles.cardCover}
         source={{
-          uri: "https://www.pngmart.com/files/10/Red-Kia-Car-Transparent-Background.png",
+          uri: `${item.image}`,
         }}
+        resizeMode="contain"
       />
       <Card.Content style={{ height: 50 }} />
     </Card>
