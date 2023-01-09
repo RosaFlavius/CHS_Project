@@ -61,8 +61,7 @@ namespace WebAPI.Controllers
         {
             var commandUser = new AddUserCommand
             {
-                FirstName = user.FirstName,
-                LastName = user.LastName,
+                Name = user.Name,
                 Email = user.Email,
                 Password = user.Password,
                 DateOfBirth = user.DateOfBirth,
@@ -99,8 +98,7 @@ namespace WebAPI.Controllers
             var command = new UpdateUserCommand
             {
                 Id = userId,
-                FirstName = user.FirstName,
-                LastName = user.LastName,
+                Name = user.Name,
                 Email = user.Email,
                 Password = user.Password,
                 DateOfBirth = user.DateOfBirth,

@@ -24,8 +24,7 @@ namespace Application.CommandHandlers
         {
             var user = await _userRepo.GetUser(request.Id);
             user.Id = request.Id;
-            user.FirstName = request.FirstName;
-            user.LastName = request.LastName;
+            user.Name = request.Name;
             user.Email = request.Email;
             user.Password = request.Password;
             user.DateOfBirth = request.DateOfBirth;

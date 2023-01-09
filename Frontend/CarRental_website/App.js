@@ -12,8 +12,8 @@ export default function App() {
     <NavigationContainer>
       <View style={styles.container}>
         {/* <Profile /> */}
-        {/* <Routes /> */}
-        <SignUp />
+        <Routes />
+        {/* <SignUp /> */}
         {/*
           <StatusBar style="auto" /> */}
       </View>

@@ -11,10 +11,9 @@ namespace Domain.Entities
 {
     public class User
     {
-        public User(string firstName, string lastName, string email, string password, string dateOfBirth, string phone, string country, string city, string address, bool admin)
+        public User(string name, string email, string password, string dateOfBirth, string phone, string country, string city, string address, bool admin)
         {
-            FirstName = firstName;
-            LastName = lastName;
+            Name = name;
             Email = email;
             Password = password;
             DateOfBirth = dateOfBirth;
@@ -26,8 +25,7 @@ namespace Domain.Entities
         }
 
         public Guid Id { get; set; } = Guid.NewGuid();
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public string DateOfBirth { get; set; }

@@ -22,8 +22,7 @@ namespace Application.CommandHandlers
         {
 
             var user = new User(
-                request.FirstName,
-                request.LastName,
+                request.Name,
                 request.Email,
                 request.Password,
                 request.DateOfBirth,
