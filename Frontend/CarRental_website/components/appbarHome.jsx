@@ -8,7 +8,7 @@ import { Icon } from "@rneui/themed";
 import ROUTES from "../navigations/constants";
 import { useNavigation } from "@react-navigation/native";
 
-const AppbarHome = () => {
+const AppbarHome = ({ handleSearch, value }) => {
   const navigation = useNavigation();
   return (
     <Appbar.Header style={styles.container}>
@@ -16,6 +16,8 @@ const AppbarHome = () => {
         style={{ borderRadius: 50, width: "100%", backgroundColor: "white" }}
         elevation={5}
         placeholder="Search for a car"
+        onChangeText={handleSearch}
+        value={value}
       />
       <View style={styles.containerIcons}>
         <TouchableOpacity

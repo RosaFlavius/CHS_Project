@@ -21,8 +21,13 @@ const styles = StyleSheet.create({
 });
 
 const Home = () => {
+  const [search, setSearch] = useState("");
   const [cars, setCars] = useState([]);
   const navigation = useNavigation();
+
+  const handleSearch = (text) => {
+    setSearch(text);
+  };
 
   const fetchCars = async () => {
     await axios
@@ -39,13 +44,17 @@ const Home = () => {
     fetchCars();
   }, []);
 
+  let filterCars = [];
+  filterCars = cars.filter(
+    (c) => c.make.toLowerCase().indexOf(search.toLowerCase()) > -1
+  );
   return (
     <View style={styles.view}>
       <View>
-        <AppbarHome />
+        <AppbarHome handleSearch={handleSearch} value={search} />
       </View>
       <ScrollView style={{ marginBottom: 95 }}>
-        {cars?.map((item) => (
+        {filterCars?.map((item) => (
           <TouchableOpacity
             activeOpacity={0.9}
             key={item.id}
