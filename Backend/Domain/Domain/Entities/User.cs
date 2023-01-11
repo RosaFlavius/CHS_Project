@@ -11,7 +11,7 @@ namespace Domain.Entities
 {
     public class User
     {
-        public User(string name, string email, string password, string dateOfBirth, string phone, string country, string city, string address, bool admin)
+        public User(string name, string email, string password, string dateOfBirth, string phone, string country, string city, string address, string picture, bool admin)
         {
             Name = name;
             Email = email;
@@ -21,6 +21,7 @@ namespace Domain.Entities
             Country = country;
             City = city;
             Address = address;
+            Picture = picture;
             Admin = admin;
         }
 
@@ -33,6 +34,8 @@ namespace Domain.Entities
         public string Country { get; set; }
         public string City { get; set; }
         public string Address { get; set; }
+        public string Picture { get; set; }
         public bool Admin { get; set; }
+
     }
 }

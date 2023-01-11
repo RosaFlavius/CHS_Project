@@ -1,1 +1,4 @@
-{ "BASE_URL": " https://ed10-84-232-135-115.eu.ngrok.io/api/" }
+{
+  "BASE_URL": "https://22a2-82-78-85-49.eu.ngrok.io/api/",
+  "MAPS_KEY": "AIzaSyAo2cutg4LlOY8wfvqkUFHESW22wOw9aIE"
+}

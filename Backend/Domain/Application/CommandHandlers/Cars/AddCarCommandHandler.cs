@@ -35,7 +35,9 @@ namespace Application.CommandHandlers.Cars
                 request.NrOfDoors,
                 request.Consumption,
                 request.Availability,
-                request.Location
+                request.Location,
+                request.Latitude,
+                request.Longitude
 
                 );
 

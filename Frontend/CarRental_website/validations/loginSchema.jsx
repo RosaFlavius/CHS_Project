@@ -3,9 +3,9 @@ import * as yup from "yup";
 export const loginSchema = yup.object().shape({
   email: yup
     .string()
-    .email("Email is not valid!")
     .min(8, "Email must have at least 8 characters!")
     .max(30, "Email must be less than 30 characters!")
+    .email("Email is not valid!")
     .required("Email is a required field!"),
   password: yup
     .string()
@@ -18,4 +18,6 @@ export const loginSchema = yup.object().shape({
 export const INITIAL_FORM_STATE = {
   email: "",
   password: "",
+  wrongEmail: true,
+  wrongPassword: true,
 };

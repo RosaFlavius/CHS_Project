@@ -45,7 +45,7 @@ const DialogFilters = () => {
             title="CONFIRM"
             onPress={() => {
               console.log(`Option ${checked} was selected!`);
-              toggleDialog5();
+              toggleDialog();
             }}
           />
           <Dialog.Button title="CANCEL" onPress={toggleDialog} />

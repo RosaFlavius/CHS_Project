@@ -63,6 +63,8 @@ namespace WebAPI.Controllers
                 Consumption = car.Consumption,
                 Availability = car.Availability,
                 Location = car.Location,
+                Latitude = car.Latitude,
+                Longitude = car.Longitude
 
 
             };
@@ -104,7 +106,9 @@ namespace WebAPI.Controllers
                 NrOfDoors = car.NrOfDoors,
                 Consumption = car.Consumption,
                 Availability = car.Availability,
-                Location = car.Location
+                Location = car.Location,
+                Latitude = car.Latitude,
+                Longitude = car.Longitude
             };
             await _mediator.Send(command);
 

@@ -9,7 +9,7 @@ namespace Domain.Entities
 {
     public class Car
     {
-        public Car(string make, string model, int year, int mileage, FuelType fuel, float price, string image, int engine, bool airConditions, int nrOfDoors, ConsumptionType consumption, bool availability, string location)
+        public Car(string make, string model, int year, int mileage, FuelType fuel, float price, string image, int engine, bool airConditions, int nrOfDoors, ConsumptionType consumption, bool availability, string location, float latitude, float longitude)
         {
             Make = make;
             Model = model;
@@ -24,6 +24,8 @@ namespace Domain.Entities
             Consumption = consumption;
             Availability = availability;
             Location = location;
+            Latitude = latitude;
+            Longitude = longitude;
             
 
 
@@ -54,9 +56,11 @@ namespace Domain.Entities
         public ConsumptionType Consumption { get; set; }
         public bool Availability { get; set; }
         public string Location { get; set; }
+        public float Latitude { get; set; }
+        public float Longitude { get; set; }
 
 
 
 
-}
+    }
 }

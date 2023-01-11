@@ -26,7 +26,10 @@ const AppbarHome = () => {
         >
           <Icon raised name="user-tie" type="font-awesome-5" color="black" />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity
+          key={2}
+          onPress={() => navigation.navigate(ROUTES.MAP)}
+        >
           <Icon raised name="location" type="entypo" color="black" />
         </TouchableOpacity>
         <DialogFilters />

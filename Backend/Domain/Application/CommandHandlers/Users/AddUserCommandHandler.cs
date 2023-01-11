@@ -30,6 +30,7 @@ namespace Application.CommandHandlers
                 request.Country,
                 request.City,
                 request.Address,
+                request.Picture,
                 request.Admin
                 );
 

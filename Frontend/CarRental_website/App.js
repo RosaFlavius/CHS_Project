@@ -6,6 +6,7 @@ import "react-native-gesture-handler";
 import Routes from "./navigations/routes";
 import Profile from "./pages/user/profile/profile";
 import SignUp from "./pages/user/signup/signup";
+import Map from "./pages/user/map/map";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <View style={styles.container}>
         {/* <Profile /> */}
         <Routes />
+        {/* <Map /> */}
         {/* <SignUp /> */}
         {/*
           <StatusBar style="auto" /> */}

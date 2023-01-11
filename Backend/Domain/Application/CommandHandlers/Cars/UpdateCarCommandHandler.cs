@@ -37,6 +37,8 @@ namespace Application.CommandHandlers.Cars
             car.Consumption = request.Consumption;
             car.Availability = request.Availability;
             car.Location = request.Location;
+            car.Latitude = request.Latitude;
+            car.Longitude = request.Longitude;
 
             Car result = _carRepo.UpdateCar(car);
             await _carRepo.SaveChangesAsync();

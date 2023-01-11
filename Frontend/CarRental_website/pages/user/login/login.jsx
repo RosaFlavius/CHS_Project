@@ -12,9 +12,9 @@ import {
 } from "../../../validations/loginSchema";
 import { Formik } from "formik";
 import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Login = () => {
-  //   const [user, setUser] = useState({});
   const navigation = useNavigation();
 
   const handleSubmit = async (email, password) => {
@@ -28,24 +28,19 @@ const Login = () => {
             });
           }
         } else {
-          setCheckEmail(false);
-          setCheckPassword(false);
         }
       })
       .catch(function (error) {
         console.log(error);
       });
   };
-
-  //   const handleSubmit = (email, password) => {
-  //     checkCredentials(email, password);
-  //     if (checkEmail === true && checkPassword === true) {
-  //       navigation.navigate(ROUTES.HOME, {
-  //         userId: `${user.id}`,
-  //       });
-  //     } else {
-  //     }
-  //   };
+  const storeData = async (value) => {
+    try {
+      await AsyncStorage.setItem("LoggedInUser", value);
+    } catch (e) {
+      // saving error
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -82,6 +77,7 @@ const Login = () => {
           validationSchema={loginSchema}
           onSubmit={(values) => {
             handleSubmit(values.email, values.password);
+            storeData(values.id);
           }}
         >
           {({

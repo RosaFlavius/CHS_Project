@@ -4,4 +4,5 @@ export default {
   PROFILE: "Profile",
   SIGNUP: "SignUp",
   LOGIN: "Login",
+  MAP: "Map",
 };

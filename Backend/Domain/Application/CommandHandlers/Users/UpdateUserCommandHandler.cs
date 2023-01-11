@@ -32,6 +32,7 @@ namespace Application.CommandHandlers
             user.Country = request.Country;
             user.City = request.City;
             user.Address = request.Address;
+            user.Picture = request.Picture;
             user.Admin = request.Admin;
 
             User result = _userRepo.UpdateUser(user);

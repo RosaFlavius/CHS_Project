@@ -25,5 +25,7 @@ namespace Application.Commands.Cars
         public ConsumptionType Consumption { get; set; }
         public bool Availability { get; set; }
         public string Location { get; set; }
+        public float Latitude { get; set; }
+        public float Longitude { get; set; }
     }
 }

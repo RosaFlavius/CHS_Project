@@ -69,6 +69,7 @@ namespace WebAPI.Controllers
                 Country = user.Country,
                 City = user.City,
                 Address = user.Address,
+                Picture = user.Picture,
                 Admin = user.Admin,
 
             };
@@ -106,6 +107,7 @@ namespace WebAPI.Controllers
                 Country = user.Country,
                 City = user.City,
                 Address = user.Address,
+                Picture = user.Picture,
                 Admin = user.Admin,
             };
             await _mediator.Send(command);

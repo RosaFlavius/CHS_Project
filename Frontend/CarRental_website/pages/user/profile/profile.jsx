@@ -1,9 +1,42 @@
 import { Text } from "@rneui/base";
 import { Avatar, Divider, Button, Icon } from "@rneui/themed";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import axios from "axios";
+import env from "../../../environment.json";
 
 const Profile = () => {
+  const [userId, setUserId] = useState();
+  const [user, setUser] = useState({});
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem("LoggedInAccount");
+      if (value !== null) {
+        console.log(value);
+        setUserId(value);
+      }
+    } catch (e) {
+      console.log("error");
+    }
+  };
+  getData();
+
+  const fetchUser = async () => {
+    await axios
+      .get(`${env.BASE_URL}` + `User/${userId}`)
+      .then((response) => {
+        setUser(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    fetchUser();
+  }, [userId]);
+
   return (
     <View style={{ backgroundColor: "white", height: "100%" }}>
       <View styles={styles.containerView}>
@@ -15,13 +48,12 @@ const Profile = () => {
               borderRadius: 50,
             }}
             size="xlarge"
-            title="Rosa Flavius"
             source={{
-              uri: "https://i.kinja-img.com/gawker-media/image/upload/t_original/ijsi5fzb1nbkbhxa2gc1.png",
+              uri: `${user.picture}`,
             }}
           />
-          <Text style={styles.name}>Rosa Flavius</Text>
-          <Text style={styles.email}>flavius.rosa@student.upt.ro</Text>
+          <Text style={styles.name}>{user.name}</Text>
+          <Text style={styles.email}>{user.email}</Text>
         </View>
         <Divider
           width={5}
@@ -62,6 +94,7 @@ const Profile = () => {
               borderRadius: 50,
               marginRight: 5,
             }}
+            onPress={getData}
           >
             <Icon
               name="edit"
@@ -72,26 +105,6 @@ const Profile = () => {
             Edit Profile
           </Button>
         </View>
-        {/* <View>
-          <Button
-            type="solid"
-            size="sm"
-            buttonStyle={{
-              backgroundColor: "grey",
-              width: 140,
-              height: 40,
-              borderRadius: 50,
-            }}
-          >
-            <Icon
-              name="logout"
-              type="material"
-              color="white"
-              style={{ marginRight: 5 }}
-            />
-            Log Out
-          </Button>
-        </View> */}
 
         <View style={styles.containerInfo}>
           <View style={styles.containerRow}>
@@ -109,7 +122,7 @@ const Profile = () => {
                 wordWrap: "break-word",
               }}
             >
-              Country: Romania
+              Country: {user.country}
             </Text>
           </View>
           <View style={styles.containerRow}>
@@ -127,7 +140,7 @@ const Profile = () => {
                 wordWrap: "break-word",
               }}
             >
-              City: Arad
+              City: {user.city}
             </Text>
           </View>
 
@@ -146,7 +159,7 @@ const Profile = () => {
                 wordWrap: "break-word",
               }}
             >
-              Phone: 0734892470
+              Phone: {user.phone}
             </Text>
           </View>
           <View style={styles.containerRow}>
@@ -164,7 +177,7 @@ const Profile = () => {
                 wordWrap: "break-word",
               }}
             >
-              Date of birth: 17/07/2000
+              Date of birth: {user.dateOfBirth}
             </Text>
           </View>
           <View style={styles.containerRow}>
@@ -182,7 +195,7 @@ const Profile = () => {
                 wordWrap: "break-word",
               }}
             >
-              Address: Str. Banu Maracine Bl H Ap 18
+              Address: {user.address}
             </Text>
           </View>
         </View>
