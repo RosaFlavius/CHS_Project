@@ -6,6 +6,7 @@ import SignUp from "../pages/user/signup/signup";
 import ROUTES from "./constants";
 import Login from "../pages/user/login/login";
 import Map from "../pages/user/map/map";
+import EditProfile from "../pages/user/profile/editProfile";
 const Stack = createStackNavigator();
 
 function Routes() {
@@ -32,6 +33,7 @@ function Routes() {
       <Stack.Screen name={ROUTES.CAR} component={Car} />
       <Stack.Screen name={ROUTES.PROFILE} component={Profile} />
       <Stack.Screen name={ROUTES.MAP} component={Map} />
+      <Stack.Screen name={ROUTES.EDIT_PROFILE} component={EditProfile} />
     </Stack.Navigator>
   );
 }

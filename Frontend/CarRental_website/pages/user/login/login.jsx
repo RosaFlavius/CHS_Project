@@ -26,9 +26,10 @@ const Login = () => {
             navigation.navigate(ROUTES.HOME, {
               userId: `${response.data.id}`,
             });
+            storeData(response.data.id);
           }
-        } else {
         }
+        // console.log();
       })
       .catch(function (error) {
         console.log(error);
@@ -36,12 +37,12 @@ const Login = () => {
   };
   const storeData = async (value) => {
     try {
-      await AsyncStorage.setItem("LoggedInUser", value);
+      AsyncStorage.clear();
+      await AsyncStorage.setItem(`LoggedInAccount`, value);
     } catch (e) {
       // saving error
     }
   };
-
   return (
     <View style={styles.container}>
       <View style={styles.containerTitle}>
@@ -77,7 +78,6 @@ const Login = () => {
           validationSchema={loginSchema}
           onSubmit={(values) => {
             handleSubmit(values.email, values.password);
-            storeData(values.id);
           }}
         >
           {({

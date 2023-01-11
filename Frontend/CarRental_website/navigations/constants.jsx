@@ -5,4 +5,5 @@ export default {
   SIGNUP: "SignUp",
   LOGIN: "Login",
   MAP: "Map",
+  EDIT_PROFILE: "EditProfile",
 };

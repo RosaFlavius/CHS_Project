@@ -5,10 +5,14 @@ import { StyleSheet, View } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 import env from "../../../environment.json";
+import { useNavigation } from "@react-navigation/native";
+import ROUTES from "../../../navigations/constants";
 
 const Profile = () => {
   const [userId, setUserId] = useState();
+  const navigation = useNavigation();
   const [user, setUser] = useState({});
+
   const getData = async () => {
     try {
       const value = await AsyncStorage.getItem("LoggedInAccount");
@@ -41,17 +45,32 @@ const Profile = () => {
     <View style={{ backgroundColor: "white", height: "100%" }}>
       <View styles={styles.containerView}>
         <View style={styles.containerAvatar}>
-          <Avatar
-            rounded
-            imageProps={{
-              resizeMode: "contain",
-              borderRadius: 50,
-            }}
-            size="xlarge"
-            source={{
-              uri: `${user.picture}`,
-            }}
-          />
+          {user.picture !== "" ? (
+            <Avatar
+              rounded
+              imageProps={{
+                resizeMode: "contain",
+                borderRadius: 50,
+              }}
+              size="xlarge"
+              source={{
+                uri: `${user.picture}`,
+              }}
+            />
+          ) : (
+            <Avatar
+              rounded
+              imageProps={{
+                resizeMode: "contain",
+                borderRadius: 50,
+              }}
+              size="xlarge"
+              source={{
+                uri: `https://cdn.dribbble.com/users/673318/screenshots/13978786/media/5c307ab803776b5ae728e20e43d545fe.png?compress=1&resize=400x300`,
+              }}
+            />
+          )}
+
           <Text style={styles.name}>{user.name}</Text>
           <Text style={styles.email}>{user.email}</Text>
         </View>
@@ -94,7 +113,7 @@ const Profile = () => {
               borderRadius: 50,
               marginRight: 5,
             }}
-            onPress={getData}
+            onPress={() => navigation.navigate(ROUTES.EDIT_PROFILE)}
           >
             <Icon
               name="edit"

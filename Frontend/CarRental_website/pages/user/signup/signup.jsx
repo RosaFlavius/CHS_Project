@@ -80,6 +80,7 @@ export default function SignUp() {
         country: user.country,
         city: user.city,
         address: user.address,
+        picture: "",
         admin: false,
       })
       .then(function (response) {

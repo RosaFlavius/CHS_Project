@@ -93,7 +93,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut("{userId}")]
-        public async Task<IActionResult> UpdateUser(NewUserDTO user, Guid userId)
+        public async Task<IActionResult> UpdateUser(UpdateUserCommand user, Guid userId)
         {
 
             var command = new UpdateUserCommand

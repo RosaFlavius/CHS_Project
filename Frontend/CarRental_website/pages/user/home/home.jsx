@@ -37,7 +37,6 @@ const Home = () => {
 
   useEffect(() => {
     fetchCars();
-    console.log(cars);
   }, []);
 
   return (
