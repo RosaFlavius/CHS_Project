@@ -21,13 +21,13 @@ const DialogFilters = () => {
       <Dialog isVisible={visible} onBackdropPress={toggleDialog}>
         <Dialog.Title title="Select Preference" />
         {[
-          "Option 1",
-          "Option 2",
-          "Option 3",
-          "Option 4",
-          "Option 5",
-          "Option 6",
-          "Option 7",
+          "Budget",
+          "Luxury",
+          "Available",
+          "Low consumption",
+          "Mid consumption",
+          "High consumption",
+          "With air conditioner",
         ].map((l, i) => (
           <CheckBox
             key={i}

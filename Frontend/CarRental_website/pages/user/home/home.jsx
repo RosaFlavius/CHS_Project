@@ -48,7 +48,7 @@ const Home = () => {
       <View>
         <AppbarHome handleSearch={handleSearch} value={search} />
       </View>
-      <ScrollView style={{ marginBottom: 95 }}>
+      <ScrollView style={{ marginBottom: 95, height: "85%" }}>
         {filterCars?.map((item) => (
           <TouchableOpacity
             activeOpacity={0.95}

@@ -42,7 +42,7 @@ const Map = () => {
         {cars?.map((item) => (
           <MapMarker
             key={item.id}
-            title={`${item.make} ${item.model} ${item.price}/day`}
+            title={`${item.make} ${item.model} $${item.price}/day`}
             coordinate={{
               latitude: item.latitude,
               longitude: item.longitude,
