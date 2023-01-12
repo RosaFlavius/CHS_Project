@@ -3,13 +3,9 @@ import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
 import ROUTES from "../../../navigations/constants";
 import env from "../../../environment.json";
-import { StyleSheet, View, Image, Text } from "react-native";
-import MapView, { Callout } from "react-native-maps";
+import { StyleSheet, View, Image } from "react-native";
+import MapView from "react-native-maps";
 import { MapMarker } from "react-native-maps/lib/MapMarker";
-import { Button } from "@rneui/themed";
-import { TouchableOpacity } from "react-native-gesture-handler";
-
-import MapCard from "../../../components/mapCard";
 
 const Map = () => {
   const [cars, setCars] = useState([]);

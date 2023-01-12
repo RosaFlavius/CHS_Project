@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from "react";
 import CarCard from "../../../components/cardCar";
-import { StyleSheet, ScrollView, View } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { StyleSheet, ScrollView, View, TouchableOpacity } from "react-native";
+
 import AppbarHome from "../../../components/appbarHome";
 import ROUTES from "../../../navigations/constants";
 import env from "../../../environment.json";
 import axios from "axios";
-import {
-  CommonActions,
-  StackActions,
-  useNavigation,
-} from "@react-navigation/native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useNavigation } from "@react-navigation/native";
 
 const styles = StyleSheet.create({
   view: {
@@ -56,7 +51,7 @@ const Home = () => {
       <ScrollView style={{ marginBottom: 95 }}>
         {filterCars?.map((item) => (
           <TouchableOpacity
-            activeOpacity={0.9}
+            activeOpacity={0.95}
             key={item.id}
             onPress={() =>
               navigation.navigate(ROUTES.CAR, {

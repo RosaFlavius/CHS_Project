@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Button, Dialog, CheckBox, ListItem, Avatar } from "@rneui/themed";
-import { View, Text, StyleSheet } from "react-native";
+import { Dialog, CheckBox } from "@rneui/themed";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { Icon } from "@rneui/themed";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 const DialogFilters = () => {
   const [visible, setVisible] = useState(false);

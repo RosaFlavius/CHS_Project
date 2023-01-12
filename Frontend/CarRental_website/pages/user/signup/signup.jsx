@@ -7,7 +7,7 @@ import {
   INITAL_FORM_STATE,
 } from "../../../validations/registerSchema";
 import { Formik } from "formik";
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
 import ROUTES from "../../../navigations/constants";
@@ -51,24 +51,7 @@ const styles = StyleSheet.create({
 });
 
 export default function SignUp() {
-  const [validEmail, setValidEmail] = useState(false);
   const navigation = useNavigation();
-
-  // const emailAlreadyExists = (email) => {
-  //   axios
-  //     .get(`${env.BASE_URL}` + `User/users/${email}`)
-  //     .then(function (response) {
-  //       if (response) {
-  //         setValidEmail(false);
-  //       } else {
-  //         setValidEmail(true);
-  //       }
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // };
-
   const handleSubmit = (user) => {
     axios
       .post(`${env.BASE_URL}` + `User`, {

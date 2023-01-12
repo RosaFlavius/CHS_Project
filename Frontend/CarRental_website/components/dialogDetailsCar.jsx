@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Dialog, CheckBox, ListItem, Avatar } from "@rneui/themed";
+import { Button, Dialog } from "@rneui/themed";
 import { View, Text, StyleSheet } from "react-native";
 import { Icon } from "@rneui/themed";
 import FuelType from "../domain/enums/FuelType";

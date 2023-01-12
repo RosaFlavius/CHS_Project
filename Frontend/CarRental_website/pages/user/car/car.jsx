@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { Button, Icon, Image, Divider } from "@rneui/themed";
 import DialogDetailsCar from "../../../components/dialogDetailsCar";
 import { useRoute } from "@react-navigation/native";

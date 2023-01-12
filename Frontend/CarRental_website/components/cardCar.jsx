@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Button, Card, Text } from "react-native-paper";
+import { Card, Text } from "react-native-paper";
 import { StyleSheet, View } from "react-native";
 
 const styles = StyleSheet.create({

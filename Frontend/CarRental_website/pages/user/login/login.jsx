@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { StyleSheet, View, ScrollView } from "react-native";
+import React from "react";
+import { StyleSheet, View, TouchableOpacity } from "react-native";
 import { Text, Avatar, Input, Icon, Button } from "@rneui/themed";
-import { HelperText } from "react-native-paper";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import ROUTES from "../../../navigations/constants";
 import env from "../../../environment.json";
