@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, ScrollView } from "react-native";
-import { Text, Button } from "@rneui/themed";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { Button } from "@rneui/themed";
+
 import { HelperText, TextInput } from "react-native-paper";
-import ROUTES from "../../../navigations/constants";
 import env from "../../../environment.json";
 import {
   editProfileSchema,
